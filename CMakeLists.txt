@@ -11,6 +11,11 @@ FetchContent_Declare(SFML
     GIT_SHALLOW ON
     EXCLUDE_FROM_ALL
     SYSTEM)
+
+# --- DISABLE AUDIO & NETWORK ---
+set(SFML_BUILD_AUDIO OFF CACHE BOOL "" FORCE)
+set(SFML_BUILD_NETWORK OFF CACHE BOOL "" FORCE)
+# --------------------------------------------------
 FetchContent_MakeAvailable(SFML)
 
 add_executable(main src/main.cpp)
